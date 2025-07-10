@@ -1,0 +1,30 @@
+[project]
+name = "mcp-server-deep-dive-deployment"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=1.10.1",
+]
+
+# this tell to go inside the 
+# mcpserverfolder then go to the main.py file
+# and run the main function
+
+[project.scripts]
+mcp-server = "mcpserver.__main__:main"
+
+# this build the and require setup of tools
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+# this tell that tools and packages also are in the src folder 
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
